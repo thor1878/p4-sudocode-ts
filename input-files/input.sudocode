@@ -1,0 +1,9 @@
+rule unique() expects cell1, cell2:
+    apply val(cell1) != val(cell2)
+
+rule uniqueCollection() expects * cells:
+    for i from 1 to len(cells):
+        for j from i + 1 to len(cells):
+            apply unique() to cells[i], cells[j]
+
+apply uniqueCollection() to [1:1, 1:2]
