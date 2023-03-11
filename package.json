@@ -8,7 +8,7 @@
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "install:extensions": "code --install-extension mike-lischke.vscode-antlr4 && code --install-extension vscjava.vscode-java-pack",
+        "install:extensions": "code --install-extension mike-lischke.vscode-antlr4 && code --install-extension vscjava.vscode-java-pack && code --install-extension esbenp.prettier-vscode && code --install-extension dbaeumer.vscode-eslint",
         "install:highlighter": "cd extensions/sudocode && npx vsce package && code --uninstall-extension ttm.sudocode && code --install-extension *.vsix",
         "compile": "npx tsc",
         "build:lexer": "npx antlr4ts src/grammar/SudoLexer.g4 -o src/lib -Xexact-output-dir",
@@ -27,6 +27,9 @@
     },
     "devDependencies": {
         "@types/node": "^18.15.0",
-        "antlr4ts-cli": "^0.5.0-alpha.4"
+        "@typescript-eslint/eslint-plugin": "^5.54.1",
+        "@typescript-eslint/parser": "^5.54.1",
+        "antlr4ts-cli": "^0.5.0-alpha.4",
+        "eslint": "^8.36.0"
     }
 }

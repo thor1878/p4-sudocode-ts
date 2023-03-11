@@ -1,0 +1,5 @@
+dist
+extentions
+.vscode
+node_modules
+src/lib
