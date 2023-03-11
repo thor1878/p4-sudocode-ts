@@ -4,3 +4,4 @@ package-lock.json
 .antlr
 .DS_Store
 src/lib
+extensions/sudocode/*.vsix
