@@ -1,6 +1,8 @@
 {
     "recommendations": [
         "mike-lischke.vscode-antlr4",
-        "vscjava.vscode-java-pack"
+        "vscjava.vscode-java-pack",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
     ]
 }
