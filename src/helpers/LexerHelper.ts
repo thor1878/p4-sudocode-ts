@@ -8,7 +8,6 @@ export default class LexerHelper {
     constructor() {
         this.indentStack = [0]
         this.tokens = []
-        console.log('')
     }
     /*
      * Helper method to handle whitespace (NEWLINE, INDENT, DEDENT) while scanning tokens

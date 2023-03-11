@@ -1,0 +1,13 @@
+name: Release
+
+on:
+    push:
+        branches: [master]
+    workflow_dispatch:
+
+env:
+    NODE_VERSION: 16
+
+jobs:
+    call-workflow-lint:
+        uses: ./.github/workflows/lint.yml
