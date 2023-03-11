@@ -11,6 +11,7 @@
         "install:extensions": "code --install-extension mike-lischke.vscode-antlr4 && code --install-extension vscjava.vscode-java-pack && code --install-extension esbenp.prettier-vscode && code --install-extension dbaeumer.vscode-eslint",
         "install:highlighter": "cd extensions/sudocode && npx vsce package && code --uninstall-extension ttm.sudocode && code --install-extension *.vsix",
         "compile": "npx tsc",
+        "lint": "npx eslint src",
         "build:lexer": "npx antlr4ts src/grammar/SudoLexer.g4 -o src/lib -Xexact-output-dir",
         "build:parser": "npx antlr4ts -visitor src/grammar/SudoParser.g4 -o src/lib -Xexact-output-dir",
         "build:dist": "npm run build:lexer && npm run build:parser && npm run compile",

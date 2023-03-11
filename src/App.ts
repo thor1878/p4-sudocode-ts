@@ -19,6 +19,7 @@ function main() {
 
     const visitor = new PrintVisitor()
     const tree = visitor.visit(parser.prog())
+    // eslint-disable-next-line no-console
     console.log(JSON.stringify(tree))
 
     // const cells: Cell[] = []

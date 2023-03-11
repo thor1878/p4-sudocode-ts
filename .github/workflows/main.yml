@@ -1,0 +1,25 @@
+name: Verify build
+
+on:
+    pull_request:
+        branches: ['main']
+
+jobs:
+    verify-build:
+        name: Verify build
+        runs-on: ubuntu-latest
+        steps:
+            - name: Install NodeJS
+              uses: actions/setup-node@v2
+
+            - name: Code Checkout
+              uses: actions/checkout@v2
+
+            - name: Install Dependencies
+              run: npm ci
+
+            - name: Code Linting
+              run: npm run lint
+
+            - name: Building
+              run: npm run build:dist
