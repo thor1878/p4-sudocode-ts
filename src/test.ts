@@ -5,9 +5,8 @@ export class Sudoku {
 
     constructor(cells: Cell[]) {
         this.cells = cells
-        
-        this.predicates = {
 
+        this.predicates = {
             uniqueCollection: (params: number[], cells: Cell[][]): PredicateResult => {
                 //
                 const results: PredicateResult[] = []
@@ -49,15 +48,27 @@ export class Sudoku {
                     passed: passed,
                     name: 'unique',
                     children: results
-                };
+                }
             }
         }
         this.constraints = [
             {
                 pred: this.predicates.uniqueCollection,
-                cells: [[cells[0], cells[1], cells[2], cells[3], cells[4], cells[5], cells[6], cells[7], cells[8]]],
+                cells: [
+                    [
+                        cells[0],
+                        cells[1],
+                        cells[2],
+                        cells[3],
+                        cells[4],
+                        cells[5],
+                        cells[6],
+                        cells[7],
+                        cells[8]
+                    ]
+                ],
                 params: []
-            },
+            }
         ]
     }
 
@@ -89,4 +100,3 @@ export type Cell = {
     col: number
     val: number
 }
-

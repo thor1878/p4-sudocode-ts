@@ -1,17 +1,13 @@
-import { SudoLexer } from "./lib/SudoLexer";
-import { SudoParser } from "./lib/SudoParser";
-import { CharStreams, CommonTokenStream } from "antlr4ts";
-import path from 'path'
-
-import fs from 'fs'
-import { PrintVisitor } from "./visitors/PrintVisitor";
-import { Cell, Sudoku } from "./test";
+import * as path from 'path'
+import * as fs from 'fs'
+import { SudoLexer } from './lib/SudoLexer'
+import { SudoParser } from './lib/SudoParser'
+import { CharStreams, CommonTokenStream } from 'antlr4ts'
+import { PrintVisitor } from './visitors/PrintVisitor'
+// import { Cell, Sudoku } from './test'
 
 import util from 'util'
 util.inspect.defaultOptions.depth = 5
-
-
-
 
 function main() {
     const _path = path.join(__dirname, '..', 'input-files', 'input.sudocode')
@@ -23,9 +19,8 @@ function main() {
 
     const visitor = new PrintVisitor()
     const tree = visitor.visit(parser.prog())
-    console.log(JSON.stringify(tree));
-    
-
+    // eslint-disable-next-line no-console
+    console.log(JSON.stringify(tree))
 
     // const cells: Cell[] = []
     // for (let y = 0; y < 9; y++) {
@@ -36,15 +31,11 @@ function main() {
     //             col: x,
     //             val: Math.floor(Math.random() * 9) + 1
     //         })
-    //     }   
+    //     }
     // }
     // console.log(cells);
-    
-    
+
     // const s = new Sudoku(cells)
     // console.log(JSON.stringify(s.validate()))
-
 }
 main()
-
-
