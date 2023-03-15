@@ -41,7 +41,14 @@ term
     | NUMBER
     ;
 
-cell_params: (cell | cell_list) (',' (cell | cell_list))*;
+cell_params: (cell | cell_list | cell_range) (',' (cell | cell_list | cell_range))*;
+
+cell_range
+          : cell_arrow 
+          | cell_box;
+cell_arrow: cell '->' cell ('->' cell)*;
+cell_box: cell '=>' cell;
+
 cell_list
     : '[' cell (',' cell)* ']'
     | ID
