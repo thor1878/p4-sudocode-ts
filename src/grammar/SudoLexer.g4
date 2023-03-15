@@ -25,6 +25,8 @@ MOD: '%';
 COLON: ':';
 SEMI: ';';
 COMMA: ',';
+CELL_RANGE_ARROW: '->';
+CELL_RANGE_BOX: '=>';
 
 COMPARISON: '==' | '!=' | '>=' | '>' | '<=' | '<';
 
